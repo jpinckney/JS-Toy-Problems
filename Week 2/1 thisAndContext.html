@@ -34,7 +34,7 @@
     // and can not be rebound.
     // On step 4 when we set it as a property of the props object 'this' becomes the prop object, not
     // personTwo
-    
+
     // Notes on this toy problem:
     // This may be the first time students are exposed to the `this` keyword, so take it slow and take time for it to sink in. 
     // They may also not be used to typing code in the browser console. 
@@ -46,23 +46,22 @@
         favoriteThings: ['Happy little Trees', 'Happy Accidents', 'Groves', 'Mountains'],
         age: '54',
       },
-      greet: function (greeter, guy, dude) {
+      greet: function () {
         //Notice we will be checking what 'this' is every time we run the function
         console.log(this)
-        return `Hello ${greeter} ${guy} ${dude}, My name is ${this.state.name}. do you like ${this.state.favoriteThings[0]}?`
+        return `Hello, My name is ${this.state.name}. do you like ${this.state.favoriteThings[0]}?`
       }
     }
 
     // Step 1
     // Run the greet method on the person object.
     // Pay close attention to what the console log of 'this' prints.
-    person.greet()
 
 
     // Step 2
     // Now create a variable called fn and save person.greet to it.
     // Run the fn function and notice what 'this' is in the console.
-    var x = person.greet
+
 
     // Step 3
     // If we pass person.greet as a parameter to a function and run
@@ -92,10 +91,10 @@
       props: {
         job: 'fixer',
         friends: ['Al Borland', 'Wilson Wilson Jr.'],
-        greet: function (greeter) {
+        greet: function () {
           //Notice we will be checking what 'this' is every time we run the function
           console.log(this)
-          return `Hello ${greeter}, My name is ${this.state.name}. do you like ${this.state.favoriteThings[0]}?`
+          return `Hello, My name is ${this.state.name}. do you like ${this.state.favoriteThings[0]}?`
         }
       },
     }
@@ -110,7 +109,6 @@
     // look up '.bind' and try and redo steps 2, 3 and 4 but use your new found
     // knowledge about '.bind' to make sure it remembers what 'this' is.
 
-    var boundFunction = person.greet.bind(person);
 
   </script>
 </body>
